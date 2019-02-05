@@ -1,0 +1,62 @@
+// Homework_5.cpp : Defines the entry point for the console application.
+/**********************************************
+Homework Submission 5
+
+Written by: Jackson Allyn
+April 12th, 2017
+CS140: Programming and Computing
+Prof. Hansen
+
+Worked with: N/A
+
+Sources:
+http://www.cplusplus.com/reference/array/array/fill/
+http://www.cplusplus.com/doc/tutorial/dynamic/
+**********************************************/
+
+#include "stdafx.h"
+#include "myvector.h"
+#include <iomanip>
+#include <iostream>
+#include <vector>
+
+using namespace std;
+
+int main()
+{
+
+	int* test1 = new int[4]; //Pointer test1 creates a dynamically allocated array of 4 elements
+	for (int i = 0; i < 4; i++) //for loop that has the array start at 10 and count up 4 places
+	{
+		test1[i] = 10 + i; //Array is set to start at 10 and then go up by one each pass
+	} 
+	test1 = pushBack(test1, 4, 50); //Places 50 in the 4th slot
+	for (int i = 0; i < 5; i++) // for loop to display the output
+	{
+		cout << test1[i] << ','; // Outputs the values in the array with commas between
+	} 
+	cout << endl; //Ouputs endline and moves down to the next line
+	at(test1, 1) = 60; //Places 60 at the second slot in the array
+	for (int i = 0; i < 5; i++) //For loop that runs 5 times
+	{
+		cout << test1[i] << ','; //Ouputs for the elements in the array
+	} 
+	cout << endl; //Ouptus endline and moves down to the next line
+	
+	test1 = resize(test1, 5, 7); //Resizes the array from 5 elements to 7
+	for (int i = 0; i < 7; i++) //For loop that runs 7 times
+	{
+		cout << test1[i] << ','; // Outputs the values in the array with commas between
+	} 
+	cout << endl; //Outputs endline and moves down to the next line
+	
+	test1 = resize(test1, 7, 3); //Resizes the array to 3 elements from 7
+	for (int i = 0; i < 3; i++) //for loop that runs through 3 times
+	{
+		cout << test1[i] << ','; // Outputs the values in the array with commas between
+	} 
+	cout << endl; //Ouptus endline and moves down to the next line
+	
+    return 0; //Returns 0
+}
+
